@@ -3,19 +3,15 @@
 const longestWord = (sentence)=> {
 
     function islettervalid (letter) {
-        return "A".charCodeAt() <= letter.charCodeAt() && letter.charCodeAt() <= "Z".charCodeAt() || "a".charCodeAt() <= letter.charCodeAt() && letter.charCodeAt() <= "z".charCodeAt();
+        return "A".charCodeAt(0) <= letter.charCodeAt() && letter.charCodeAt() <= "Z".charCodeAt(0) || "a".charCodeAt(0) <= letter.charCodeAt() && letter.charCodeAt() <= "z".charCodeAt(0);
     }
-
-    splitsentence = sentence.split(" ");
-
-    var longestwordlength = 0;
-    var longestwordfinal = "";
-
+    let splitsentence = sentence.split(" ");
+    let longestwordlength = 0;
     for (word in splitsentence) {
 
-        var currentwordlength = 0;
-
-        for (letter in splitsentence[word]) {
+        let currentwordlength = 0;
+        let currentword = splitsentence[word];
+        for (letter in currentword) {
             if (islettervalid(splitsentence[word][letter])) {
                 currentwordlength++;
             }
@@ -29,4 +25,4 @@ const longestWord = (sentence)=> {
     console.log(longestwordfinal);
 }
 
-longestWord("I am not sure if this works");
+longestWord("I am not sure if this works probably does");
