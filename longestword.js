@@ -1,6 +1,6 @@
 // gets a sentence, checks for longest word without including symbols. returns longest word.
 
-const longestWord = (sentence)=> {
+const longestWord = (sentence) => {
 
     function islettervalid (letter) {
         return "A".charCodeAt(0) <= letter.charCodeAt() && letter.charCodeAt() <= "Z".charCodeAt(0) || "a".charCodeAt(0) <= letter.charCodeAt() && letter.charCodeAt() <= "z".charCodeAt(0);
@@ -22,7 +22,10 @@ const longestWord = (sentence)=> {
             longestwordlength = currentwordlength;
         }
     }
-    console.log(longestwordfinal);
+
+    longestwordfinal = longestwordfinal.replace(/[^a-zA-Z ]/g, ""); //removing any character that is not a letter
+    return longestwordfinal;
+
 }
 
-longestWord("I am not sure if this works probably does");
+console.log(longestWord("javaScr1pt html 1234567890"));
